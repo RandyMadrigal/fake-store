@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/Api";
 import Item from "./Item";
+import Loading from "./Loading";
 
 export default function ItemContainer() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getData = async () => {
@@ -12,11 +14,20 @@ export default function ItemContainer() {
         setProducts(data);
       } catch (err) {
         console.log(err);
+      } finally {
+        setLoading(false);
       }
     };
 
     getData();
   }, []);
+
+  if (loading)
+    return (
+      <>
+        <Loading />
+      </>
+    );
 
   return (
     <>

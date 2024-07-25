@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { getProduct } from "../services/Api";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import Loading from "./Loading";
 
 export default function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
   const id = useParams().id;
 
   useEffect(() => {
@@ -14,11 +16,20 @@ export default function ItemDetailContainer() {
         setProduct(data);
       } catch (err) {
         console.log(err);
+      } finally {
+        setLoading(false);
       }
     };
 
     getData();
   }, [id]);
+
+  if (loading)
+    return (
+      <>
+        <Loading />
+      </>
+    );
 
   return (
     <>
