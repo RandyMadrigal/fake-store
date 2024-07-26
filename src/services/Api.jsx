@@ -5,7 +5,6 @@ export const getProducts = async () => {
       throw new Error("the response is not ok");
     }
     const data = await res.json();
-
     return data;
   } catch (err) {
     console.log(err);
@@ -22,6 +21,40 @@ export const getProduct = async (Id) => {
     }
 
     const data = await res.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};
+
+export const getCategories = async () => {
+  try {
+    const res = await fetch("https://fakestoreapi.com/products/categories");
+
+    if (!res.ok) {
+      throw new Error("the response is not ok");
+    }
+
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};
+
+export const getCategory = async (category) => {
+  try {
+    const res = await fetch(
+      `https://fakestoreapi.com/products/category/${category}`
+    );
+
+    if (!res.ok) {
+      throw new Error("the response is not ok");
+    }
+
+    const data = res.json();
     return data;
   } catch (err) {
     console.log(err);

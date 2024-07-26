@@ -4,7 +4,7 @@ export default function ItemDetail({ item }) {
   const { id, title, price, category, description, image } = item;
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="grid grid-flow-col grid-col-2 text-white text-justify rounded-3xl w-9/12 gap-2">
+      <div className="grid grid-flow-col grid-col-2 text-white text-justify rounded-3xl w-8/12 gap-2">
         <div className="max-h-96 rounded-lg overflow-hidden">
           <img className="w-full h-full object-cover" src={image} alt={title} />
         </div>
