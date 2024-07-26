@@ -1,3 +1,4 @@
+import Home from "./components/Home"
 import ProductContainer from "./components/ProductsContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import CategoriesContainer from "./components/CategoriesContainer";
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
 
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/" element={<ProductContainer />} />
 
         <Route path="/products" element={<ProductContainer />} />
