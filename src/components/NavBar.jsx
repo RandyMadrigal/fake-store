@@ -10,9 +10,7 @@ export default function NavBar() {
         <li className="hover:underline">
           <Link to="/Products">Products</Link>
         </li>
-        <li className="hover:underline">
-          <Link to="categories">Categories</Link>
-        </li>
+
         <li className="hover:underline">
           <Link to="cart">Cart</Link>
         </li>

@@ -5,16 +5,17 @@ export default function Product({ item }) {
   const { id, title, price, category, image } = item;
 
   return (
-    <div className="w-full mt-9 overflow-hidden text-justify border rounded-xl bg-gray-800 border-gray-700 hover:shadow-lg">
-      <div className="h-40 flex justify-center">
+    <div className="w-5/6 mt-9 overflow-hidden text-justify border rounded-xl bg-gray-800 border-gray-700 hover:shadow-lg">
+      <div className="h-80 flex justify-center">
         <img
-          className="w-full h-5-full object-cover object-top"
+          className="w-full h-full object-cover object-top"
           src={image}
           alt={title}
+          loading="lazy"
         />
       </div>
 
-      <div className="p-4 flex-grow">
+      <div className="p-4">
         <h5 className="mb-2 text-xl font-bold  text-white">{title}</h5>
 
         <p className="mb-3 font-normal  dark:text-gray-400 capitalize">

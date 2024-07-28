@@ -54,7 +54,32 @@ export const getCategory = async (category) => {
       throw new Error("the response is not ok");
     }
 
-    const data = res.json();
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};
+
+export const filterData = async (category) => {
+  try {
+    let URL = "";
+    console.log(category);
+
+    category === null || undefined || ""
+      ? (URL = `https://fakestoreapi.com/products`)
+      : (URL = `https://fakestoreapi.com/products/category/${category}`);
+
+    const res = await fetch(URL);
+
+    if (!res.ok) {
+      throw new Error("the response is not ok");
+    }
+
+    const data = await res.json();
+    console.log(data);
+
     return data;
   } catch (err) {
     console.log(err);

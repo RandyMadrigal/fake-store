@@ -10,6 +10,7 @@ export default function HomeItem({ category }) {
           <img
             className="rounded-t-lg w-full h-full object-cover object-top"
             src={CategoriesImg(category)}
+            loading="lazy"
             alt={category}
           />
         </div>

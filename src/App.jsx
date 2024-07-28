@@ -1,4 +1,4 @@
-import Home from "./components/Home"
+import Home from "./components/Home";
 import ProductContainer from "./components/ProductsContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import CategoriesContainer from "./components/CategoriesContainer";
@@ -11,17 +11,18 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      <div className="bg-gradient-to-r from-slate-300 to-slate-500">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/" element={<ProductContainer />} />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/" element={<ProductContainer />} />
+          <Route path="/products" element={<ProductContainer />} />
+          <Route path="/product/:id" element={<ItemDetailContainer />} />
 
-        <Route path="/products" element={<ProductContainer />} />
-        <Route path="/product/:id" element={<ItemDetailContainer />} />
-
-        <Route path="/categories/" element={<CategoriesContainer />} />
-        <Route path="/categories/:category" element={<CategoryContainer />} />
-      </Routes>
+          <Route path="/categories/" element={<CategoriesContainer />} />
+          <Route path="/categories/:category" element={<CategoryContainer />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

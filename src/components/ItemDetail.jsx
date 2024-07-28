@@ -6,7 +6,12 @@ export default function ItemDetail({ item }) {
     <div className="flex justify-center items-center h-screen">
       <div className="grid grid-flow-col grid-col-2 text-white text-justify rounded-3xl w-8/12 gap-2">
         <div className="max-h-96 rounded-lg overflow-hidden">
-          <img className="w-full h-full object-cover" src={image} alt={title} />
+          <img
+            className="w-full h-full object-cover"
+            src={image}
+            alt={title}
+            loading="lazy"
+          />
         </div>
 
         <div className="bg-gray-800 border-gray-700 hover:shadow-lg p-6 overflow-hidden rounded-3xl">

@@ -10,6 +10,7 @@ export default function Category({ item }) {
           className="w-full h-5-full object-cover object-top"
           src={image}
           alt={title}
+          loading="lazy"
         />
       </div>
 
